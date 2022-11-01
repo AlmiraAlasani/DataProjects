@@ -1,37 +1,36 @@
-import pandas as pd
-import numpy as np
+#Read the files
+#read paper1
+f = open("paper1.txt", "r")
+print(f.read())
+print('********************************************************************************************************************************************************************************************************')
 
-df = pd.read_csv('dataset.txt', delimiter="\t",encoding='cp1252')
-df.head()
+#read paper2
+f = open("paper2.txt", "r")
+print(f.read())
+print('*************************************************************************************************************************************************************************************************')
 
-#bestselling product
-best = df.loc[df['qntysold'].idxmax()]
-best
+# Generate word frequency list
+#paper1
+words = open("paper1.txt", "r").read().split() #read the words into a list.
+uniqWords = sorted(set(words)) #remove duplicate words and sort
+for word in uniqWords:
+    print (words.count(word), word)
+print('**********************************************************************************************')
+#paper2
+words = open("paper2.txt", "r").read().split() #read the words into a list.
+uniqWords = sorted(set(words)) #remove duplicate words and sort
+for word in uniqWords:
+    print (words.count(word), word)
+print('********************************************************************************************')
 
-#worstselling product
-worst = df.loc[df['qntysold'].idxmin()]
-worst
+#Calculate cosine similarity
 
-#mean and standard deviation
+v1=[];
+v2=[];
+import torch
+import torch.nn as nn
 
-Mean = df.price.mean()
-Std = df.price.std()
-price_dtl = pd.Series(data=[Mean,Std],index=['Mean','Standard deviation'])
-price_dtl
+cos = nn.CosineSimilarity()
+cos(torch.tensor([v1]), torch.tensor([v2])).item()
 
-#normalize with min/max
-df['price'] = (df['price'] - 10) / (20 - 10)
-df.head()
-
-#normalize with z score
-
-df['price'] = (df['price'] - Mean) / (Std)
-df.head()
-
-#normalize with decimal scaling
-df['price'] = df['price'] / 1000
-df.head()
-
-#median and quartiles
-med = df.qntysold.med()
-quart = df.qntysold.quantile([0.25,0.5,0.75])
+cos(torch.tensor(v1), torch.tensor(v2)).tolist()

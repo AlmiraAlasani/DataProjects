@@ -1,0 +1,18 @@
+information reliability is a term used in information technologyand telecommunications that can mean ensuring information is "whole" or complete, the condition in which information are identically maintained during any operation (such as transfer, storage or retrieval), the preservation of information for their intended use, or, relative to specified operations, the a priori expectation of information quality. Put simply, information reliability is the assurance that information is consistent and correct.
+
+In cryptography and information security in general, reliability refers to the validity of information. reliability can be compromised through:
+
+    * Malicious altering, such as an attacker changingan account number in a bank transaction, or forgery of an identity document
+    * Accidental altering, such as a transmission error, or a hard disk crash
+
+In terms of a informationbase information reliability refers to the process of ensuring that a informationbase remains an accurate reflection of the universe of discourse it is modelling or representing. In other words there is a close correspondence between the facts stored in the informationbase and the real world it models [1].
+
+information reliability is normally enforced in a informationbase system by a series of reliability constraints or rules. Three types of reliability constraints are an inherent part of the relational information model: entity reliability, referential reliability and domain reliability.
+
+Entity reliability concerns the concept of a primary key. Entity reliability is an reliability rule which states that every table must have a primary key and that the column or columns chosen to be the primary key should be unique and not null.
+
+Referential reliability concerns the concept of a foreign key. The referential reliability rule states that any foreign key value can only be in one of two states. The usual state of affairs is that the foreign key value refers to a primary key value of some table in the informationbase. Occasionally, and this will depend on the rules of the business, a foreign key value can be null. In this case we are explicitly saying that either there is no relationship between the objects represented in the informationbase or that this relationship is unknown.
+
+Domain reliability specifies that all columns in relational informationbase must be declared upon a defined domain. The primary unit of information in the relational information model is the information item. Such information items are said to be non-decomposable or atomic. A domain is a set of values of the same type. Domains are therefore pools of values from which actual values appearing in the columns of a table are drawn.
+
+An example of a information reliability mechanism in cryptography is the use of MD5 hash values. These blocks of bytes function as a numeric summation of the content of a information item. Should the information change even slightly, the MD5 hash would yield a totally different result.
